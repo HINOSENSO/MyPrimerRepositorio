@@ -1,21 +1,39 @@
-print("CALCULADORA")
+while True:
+    print("Seleccione la operación:")
+    print("1. Suma")
+    print("2. Resta")
+    print("3. Multiplicación")
+    print("4. División")
+    print("5. Salir")
 
-eleccion = 0
-A = 0
-B = 0
+    eleccion = input("Ingrese el número de la operación deseada: ")
 
-while eleccion != 6:
-    print("""
-    Indique la operación a realizar:
-    1) Suma
-    2) Resta
-    3) Multiplicación
-    4) División
-    5) Cambio de valores
-    6) Salir
-    """)
+    if eleccion == '5':
+        print("¡Hasta luego!")
+        break
 
-    eleccion = int(input("Ingrese el número de la operación deseada: "))
-    A = int(input("Ingrese el primer número: "))
-    B = int(input("Ingrese el segundo número: "))
+    if eleccion not in ['1', '2', '3', '4']:
+        print("Opción inválida. Por favor, seleccione una opción válida.")
+        continue
 
+    A = float(input("Ingrese el primer número: "))
+    B = float(input("Ingrese el segundo número: "))
+
+    if eleccion == '1':
+        resultado = A + B
+        operacion = "suma"
+    elif eleccion == '2':
+        resultado = A - B
+        operacion = "resta"
+    elif eleccion == '3':
+        resultado = A * B
+        operacion = "multiplicación"
+    elif eleccion == '4':
+        if B == 0:
+            print("Error: división por cero.")
+            continue
+        else:
+            resultado = A / B
+            operacion = "división"
+
+    print(f"El resultado de la {operacion} es: {resultado}\n")
