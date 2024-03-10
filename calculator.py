@@ -16,4 +16,6 @@ while eleccion != 6:
     """)
 
     eleccion = int(input("Ingrese el número de la operación deseada: "))
+    A = int(input("Ingrese el primer número: "))
+    B = int(input("Ingrese el segundo número: "))
 
